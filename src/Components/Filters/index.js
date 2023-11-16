@@ -2,15 +2,17 @@ import React from 'react';
 import './style.css';
 import SearchIcon from '@mui/icons-material/Search';
 
-function Filters({ searched, setSearched, setTriggerFilter, setRiskFilter, triggerOptions, riskOptions }) {
+function Filters({ searched, setSearched, triggers, setTriggerFilter, risks,  setRiskFilter, triggerOptions, riskOptions }) {
     return (
         <div className='filters'>
+            
             <div className='searchBox'>
                 <SearchIcon className='searchIcon' />
                 <input type="text" value={searched} placeholder='Search' onChange={(e) => { setSearched(e.target.value) }} />
             </div>
+
             <select
-                defaultValue={""}
+                value={triggers}
                 onChange={(e) => { setTriggerFilter(e.target.value) }}
             >
                 <option value="" key="reasons">{triggerOptions[0]}</option>
@@ -21,8 +23,9 @@ function Filters({ searched, setSearched, setTriggerFilter, setRiskFilter, trigg
                     ))
                 }
             </select>
+
             <select
-                defaultValue={""}
+                value={risks}
                 onChange={(e) => { setRiskFilter(e.target.value) }}
             >
                 <option value="" key="risks">{riskOptions[0]}</option>

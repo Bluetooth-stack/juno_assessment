@@ -11,14 +11,14 @@ let triggerOptions = [];
 let riskOptions = [];
 
 function Monitoring() {
-    const [pendingTab, setPendingTab] = useState(true);
+    const [pendingTab, setPendingTab] = useState(true); // state to switch tabs
     const [searched, setSearched] = useState('');
     const [triggerFilter, setTriggerFilter] = useState('');
     const [riskFilter, setRiskFilter] = useState('')
     const [pendingData, setPendingData] = useState([]);
     const [completedData, setCompletedData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false); // show or hide modal
 
     async function getPending() {
         try {
@@ -42,11 +42,13 @@ function Monitoring() {
         }
     }
 
+    // getting pending and completed data
     useEffect(() => {
         getPending();
         getCompleted();
     }, [])
 
+    // setting dynamic dropdown options
     useEffect(() => {
         if (pendingTab) {
             const tempTrigger = []
@@ -59,6 +61,7 @@ function Monitoring() {
             pendingData.map((dataObj) => (
                 tempRisk.push(dataObj.riskLevel)
             ))
+            // for unique values
             triggerOptions = [...new Set(tempTrigger)];
             riskOptions = [...new Set(tempRisk)];
         }
@@ -73,6 +76,7 @@ function Monitoring() {
             completedData.map((dataObj) => (
                 tempRisk.push(dataObj.riskLevel)
             ))
+            // for unique values
             triggerOptions = [...new Set(tempTrigger)];
             riskOptions = [...new Set(tempRisk)];
         }
@@ -82,6 +86,7 @@ function Monitoring() {
         }
     }, [pendingTab, pendingData, completedData])
 
+    // filtering data based on searched filter for each tab
     useEffect(() => {
         if (pendingTab) {
             if (searched) {
@@ -134,19 +139,36 @@ function Monitoring() {
 
             <div className='tabsContainer'>
                 <div className='tabs'>
-                    <p className={pendingTab ? 'selected' : ''} onClick={() => { setPendingTab(true) }}>Pending</p>
-                    <p className={!pendingTab ? 'selected' : ''} onClick={() => { setPendingTab(false) }}>Completed</p>
+                    <p className={pendingTab ? 'selected' : ''} onClick={() => {
+                        setPendingTab(true);
+                        // setting every global state for tab to default before switching tab
+                        setFilteredData([]);
+                        setTriggerFilter('');
+                        setRiskFilter('');
+                        setSearched('');
+                    }}>Pending</p>
+
+                    <p className={!pendingTab ? 'selected' : ''} onClick={() => {
+                        setPendingTab(false);
+                        // setting every global state for tab to default before switching tab
+                        setFilteredData([]);
+                        setTriggerFilter('');
+                        setRiskFilter('');
+                        setSearched('');
+                    }}>Completed</p>
                 </div>
-                <div className='closeAccountButton' onClick={()=>{setShowModal(true)}}>
+                <div className='closeAccountButton' onClick={() => { setShowModal(true) }}>
                     <HighlightOffIcon className='closeIcon' />
                     <p>Close account</p>
                 </div>
             </div>
 
+            {/* filter component */}
             <Filters
-                searched={searched} setSearched={setSearched} setTriggerFilter={setTriggerFilter} setRiskFilter={setRiskFilter} triggerOptions={triggerOptions} riskOptions={riskOptions}
+                searched={searched} setSearched={setSearched} triggers={triggerFilter} setTriggerFilter={setTriggerFilter} risks={riskFilter} setRiskFilter={setRiskFilter} triggerOptions={triggerOptions} riskOptions={riskOptions}
             />
 
+            {/* conditional rendering on switching tabs */}
             {
                 pendingTab ?
                     pendingData.length && <PendingTable data={filteredData.length ? filteredData : pendingData} />

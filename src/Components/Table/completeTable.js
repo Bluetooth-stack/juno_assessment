@@ -3,7 +3,7 @@ import './style.css';
 import headingGenerator from './headingGenerator';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-function CompleteTable({data}) {
+function CompleteTable({ data }) {
     const [headings, setHeadings] = useState([]);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function CompleteTable({data}) {
                                     <p className='name'>{userObj.user.name}</p>
                                     <p className='mail'>{userObj.user.mail}</p>
                                 </div>
-                                <OpenInNewIcon className='linkIcon' />
+                                <a href="/"><OpenInNewIcon className='linkIcon' /></a>
                             </td>
                             <td>
                                 <div

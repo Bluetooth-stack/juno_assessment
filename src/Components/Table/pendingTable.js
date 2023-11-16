@@ -30,7 +30,7 @@ function PendingTable({ data }) {
                   <p className='name'>{userObj.user.name}</p>
                   <p className='mail'>{userObj.user.mail}</p>
                 </div>
-                <OpenInNewIcon className='linkIcon' />
+                <a href="/"><OpenInNewIcon className='linkIcon' /></a>
               </td>
               <td>
                 <div
