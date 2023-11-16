@@ -1,0 +1,90 @@
+.sideBar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0.5rem 1rem 1rem;
+    border-right: 2px solid rgba(128, 128, 128, 0.13);
+    width: 12rem;
+    height: 94.6dvh;
+}
+
+.dummy{
+    padding: 1rem 0.5rem 1rem 1rem;
+    width: 14.4rem;
+}
+
+.linkContainer{
+    width: 100%;
+    height: 22.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.linkContainer .logo{
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin: 0;
+    color: rgba(128, 128, 128, 0.315);
+    border-top: 2px solid rgba(128, 128, 128, 0.315);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.315);
+    padding: 0.4rem 0.6rem;
+}
+
+.linkContainer ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: flex-start;
+    gap: 0.3rem;
+    color: grey;
+}
+
+.linkContainer ul li{
+    width: 100%;
+    padding: 0.5rem 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.linkContainer ul li:hover{
+    border-radius: 0.2rem;
+    background-color: rgba(214, 214, 214, 0.315);
+}
+
+.linkContainer ul .active{
+    border-radius: 0.2rem;
+    background-color: #4643EE1A;
+    color: #4643EE;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+}
+
+.userNameContainer h4{
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.userNameContainer p{
+    margin: 0;
+    color: grey;
+    font-size: 0.7rem;
+}
+
+.user img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}

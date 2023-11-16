@@ -1,0 +1,101 @@
+.modalHolder {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(160, 160, 160, 0.541);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 4px 4px grey;
+}
+
+.modalCloseIcon {
+  position: absolute;
+  right: 0.8rem;
+  top: 1rem;
+}
+
+.modalCloseIcon:hover {
+  color: rgba(247, 64, 64, 0.63);
+  cursor: pointer;
+}
+
+.modal h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.modal label {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.modal input,
+.modal textarea {
+  border: 1px solid #e4e4e4;
+  border-radius: 0.4rem;
+  outline: none;
+  font-size: 0.9rem;
+  color: black;
+  padding: 0.4rem 0.6rem;
+}
+
+textarea {
+  resize: none;
+}
+
+.radioBtnHolder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.radioBtnHolder p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.bottomButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+
+.bottomButton button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #4643ee;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.66rem 1.12rem;
+  border-radius: 0.5rem;
+}
+
+.bottomButton .disabled {
+  background-color: #e4e4e4;
+  color: #adadad;
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+}

@@ -1,0 +1,107 @@
+.tableContainer {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.tableContainer .tableHead .headRow {
+  background-color: #E4E4E4;
+}
+
+.tableContainer .tableHead .headRow th {
+  padding: 1rem;
+  color: #050505;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+table th:first-child {
+    border-top-left-radius: 1rem;
+}
+
+table th:last-child {
+    border-top-right-radius: 1rem;
+}
+
+.tableContainer tbody tr td{
+    padding: 0.6rem 1rem;
+}
+
+.tableContainer tbody{
+    border: 1px solid #E4E4E4;
+}
+
+.tableContainer tbody tr{
+    border-top:  1px solid #E4E4E4;
+}
+
+.tableContainer tbody tr td p{
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.tableContainer tbody tr .userInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableContainer tbody tr .userInfo .name{
+    font-weight: 500;
+}
+.tableContainer tbody tr .userInfo .mail{
+    font-size: 0.76rem;
+    font-weight: 400;
+    color: grey;
+    margin-top: 0.26rem;
+}
+.tableContainer tbody tr .userInfo .linkIcon{
+    transform: scale(0.8);
+    color: #4643EE;
+    cursor: pointer;
+}
+
+.tableContainer tbody tr td .risk{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tableContainer tbody tr td .risk div{
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+}
+.tableContainer tbody tr td .risk p{
+    font-weight: 500;
+}
+
+.tableContainer tbody tr td .high div{
+    background-color: #7D2424;
+}
+.tableContainer tbody tr td .low div{
+    background-color: #006540;
+}
+.tableContainer tbody tr td .medium div{
+    background-color: #88670F;
+}
+
+.tableContainer tbody tr td .high p{
+    color: #7D2424;
+}
+.tableContainer tbody tr td .low p{
+    color: #006540;
+}
+.tableContainer tbody tr td .medium p{
+    color: #88670F;
+}
+
+.tableContainer tbody tr td .date{
+    color: grey;
+}
+
+.tableContainer tbody tr td .smallerDate{
+    font-size: 0.75rem;
+    margin-top: 0.26rem;
+}
